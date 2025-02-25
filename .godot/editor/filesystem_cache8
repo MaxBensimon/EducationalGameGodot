@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1740483161
+::res://::1740483708
 icon.svg::CompressedTexture2D::4182524915184705871::1740483151::1740483162::1::::<><>::
-main.tscn::PackedScene::1870807004155378488::1740483151::0::1::::<><>::res://Scripts/PlayerMovement.gd<>res://Scripts/CameraPivot.gd
+main.tscn::PackedScene::1870807004155378488::1740483171::0::1::::<><>::res://Scripts/PlayerMovement.gd<>res://Scripts/CameraPivot.gd
 ::res://Assets/::1740313878
 ::res://Scenes/::1740313897
 ::res://Scripts/::1740483151

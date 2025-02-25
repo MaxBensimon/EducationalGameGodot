@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://1wh6hiixr1vo"]
+[gd_scene load_steps=15 format=3 uid="uid://1wh6hiixr1vo"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_girpq"]
+[ext_resource type="Script" path="res://main.gd" id="1_s0hhp"]
 [ext_resource type="Script" path="res://Scripts/CameraPivot.gd" id="2_c61s3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jr0wf"]
@@ -40,6 +41,7 @@ size = Vector3(0.525, 3, 20.0125)
 size = Vector3(0.5, 3, 19.95)
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_s0hhp")
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85, 0)
@@ -59,11 +61,11 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.0125, -0.5375)
 mesh = SubResource("CapsuleMesh_p50st")
 
 [node name="CameraPivot" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.925, 5.625, 3.45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
 script = ExtResource("2_c61s3")
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]
-transform = Transform3D(0.882948, -0.384569, 0.269278, 0, 0.573576, 0.819152, -0.469472, -0.723268, 0.506438, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 fov = 60.0
 size = 10.0
 near = 0.01
