@@ -1,0 +1,120 @@
+[gd_scene load_steps=14 format=3 uid="uid://1wh6hiixr1vo"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_girpq"]
+[ext_resource type="Script" path="res://Scripts/CameraPivot.gd" id="2_c61s3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jr0wf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f6qm0"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_p50st"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fvw12"]
+sky_top_color = Color(0.331173, 0.446323, 0.66348, 1)
+sky_horizon_color = Color(0.624052, 0.656579, 0.70599, 1)
+ground_bottom_color = Color(0.165035, 0.179994, 0.160481, 1)
+ground_horizon_color = Color(0.624052, 0.656579, 0.70599, 1)
+
+[sub_resource type="Sky" id="Sky_f2pji"]
+sky_material = SubResource("ProceduralSkyMaterial_fvw12")
+
+[sub_resource type="Environment" id="Environment_f6irf"]
+background_mode = 2
+sky = SubResource("Sky_f2pji")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vhgoy"]
+size = Vector3(19.5, 1, 19.1625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lx6e4"]
+size = Vector3(19.0375, 3.025, 0.525)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmcwc"]
+size = Vector3(19.075, 2.9625, 0.5125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yek5h"]
+size = Vector3(0.525, 3, 20.0125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfdq8"]
+size = Vector3(0.5, 3, 19.95)
+
+[node name="Main" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85, 0)
+script = ExtResource("1_girpq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3375, 0)
+shape = SubResource("CapsuleShape3D_jr0wf")
+
+[node name="PlayerCapsuleNode" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3375, 0)
+mesh = SubResource("CapsuleMesh_f6qm0")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.0125, -0.5375)
+mesh = SubResource("CapsuleMesh_p50st")
+
+[node name="CameraPivot" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.925, 5.625, 3.45)
+script = ExtResource("2_c61s3")
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]
+transform = Transform3D(0.882948, -0.384569, 0.269278, 0, 0.573576, 0.819152, -0.469472, -0.723268, 0.506438, 0, 0, 0)
+fov = 60.0
+size = 10.0
+near = 0.01
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f6irf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, -1.49013e-08, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 14.8375, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(20, 1, 20)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_vhgoy")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -9.75)
+size = Vector3(19, 3, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_lx6e4")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 9.75)
+size = Vector3(19, 3, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D4/StaticBody3D"]
+shape = SubResource("BoxShape3D_gmcwc")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.75, 2, 0)
+size = Vector3(0.5, 3, 20)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_yek5h")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75, 2, 0)
+size = Vector3(0.5, 3, 20)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D5/StaticBody3D"]
+shape = SubResource("BoxShape3D_nfdq8")
