@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1740404798
-icon.svg::CompressedTexture2D::4182524915184705871::1740313401::1740313412::1::::<><>::
-main.tscn::PackedScene::1870807004155378488::1740321968::0::1::::<><>::res://Scripts/PlayerMovement.gd<>res://Scripts/CameraPivot.gd
+::res://::1740483161
+icon.svg::CompressedTexture2D::4182524915184705871::1740483151::1740483162::1::::<><>::
+main.tscn::PackedScene::1870807004155378488::1740483151::0::1::::<><>::res://Scripts/PlayerMovement.gd<>res://Scripts/CameraPivot.gd
 ::res://Assets/::1740313878
 ::res://Scenes/::1740313897
-::res://Scripts/::1740321967
-CameraPivot.gd::GDScript::-1::1740321929::0::1::::<>Node3D<>::
-PlayerMovement.gd::GDScript::-1::1740321967::0::1::::<>CharacterBody3D<>::
+::res://Scripts/::1740483151
+CameraPivot.gd::GDScript::-1::1740483151::0::1::::<>Node3D<>::
+PlayerMovement.gd::GDScript::-1::1740483151::0::1::::<>CharacterBody3D<>::
