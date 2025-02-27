@@ -1,4 +1,3 @@
 res://main.tscn
-res://Scripts/CameraPivot.gd
-res://Scripts/PlayerMovement.gd
-res://main.gd
+res://Tileset/TilesetApartment.tres
+res://Scripts/CameraControl.gd
