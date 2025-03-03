@@ -1,9 +1,9 @@
-GridMap
-Node3D
-MeshInstance3D
-Node
 CollisionShape3D
 StaticBody3D
+Node3D
+GridMap
+MeshInstance3D
+Node
 CharacterBody3D
 ImporterMeshInstance3D
 Camera3D

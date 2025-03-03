@@ -1,3 +1,2 @@
 res://main.tscn
-res://Tileset/TilesetApartment.tres
-res://Scripts/CameraControl.gd
+res://Tileset/ludus_xr_apartment_pieces.tscn
