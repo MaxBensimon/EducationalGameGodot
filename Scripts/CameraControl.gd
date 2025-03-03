@@ -12,11 +12,16 @@ func _ready() -> void:
 func _input(event): # LEFT MOUSE is only camera. RIGHT MOUSE is camera and player direction
 	if event is InputEventMouseMotion:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			yaw -= event.relative.x * camera_sensitivity
 			pitch -= event.relative.y * camera_sensitivity
-			pitch = clamp(pitch, deg_to_rad(-89), deg_to_rad(-45))
+			pitch = clamp(pitch, deg_to_rad(-89), deg_to_rad(-25))
 			if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 				snap_player_to_camera_direction()
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT:
+			if not event.pressed:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _process(delta):
 	var player = get_parent()

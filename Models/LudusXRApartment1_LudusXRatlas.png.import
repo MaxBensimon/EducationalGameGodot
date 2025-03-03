@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do57mwenbg3ox"
+uid="uid://dvmmy8rcm6kh7"
 path.s3tc="res://.godot/imported/LudusXRApartment1_LudusXRatlas.png-18e744683582ca61fc5ea819fbbbfb5e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "91f2fc035c919dee2ae1bef6785b6a9c"
+"md5": "39320092d5a20f7051e2dc7f506487c0"
 }
 
 [deps]

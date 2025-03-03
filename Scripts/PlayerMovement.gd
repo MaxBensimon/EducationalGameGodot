@@ -13,11 +13,11 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("ui_left") and Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) or Input.is_action_pressed("ui_end"):
 		direction -= transform.basis.x
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left") and !Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		rotate_y(rotation_speed * delta)
 	if Input.is_action_pressed("ui_right") and Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) or Input.is_action_pressed("ui_page_down"):
 		direction += transform.basis.x
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") and !Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		rotate_y(-rotation_speed * delta)
 	
 	direction = direction.normalized()
