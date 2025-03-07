@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6egw3l3jy8vd"
-path.s3tc="res://.godot/imported/LudusXRApartment1_LudusXRatlas_n.png-0f2fec09cd0b31c7f92afe6426a7cdb4.s3tc.ctex"
+uid="uid://dvmmy8rcm6kh7"
+path.s3tc="res://.godot/imported/LudusXRApartment1_LudusXRatlas.png-027ee558d9e73f1aba12bef05a7c3c1f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "90f34dacfab6711e79f69230174776ca"
+"md5": "39320092d5a20f7051e2dc7f506487c0"
 }
 
 [deps]
 
-source_file="res://Models/LudusXRApartment1_LudusXRatlas_n.png"
-dest_files=["res://.godot/imported/LudusXRApartment1_LudusXRatlas_n.png-0f2fec09cd0b31c7f92afe6426a7cdb4.s3tc.ctex"]
+source_file="res://WorldModels/LudusXRApartment1_LudusXRatlas.png"
+dest_files=["res://.godot/imported/LudusXRApartment1_LudusXRatlas.png-027ee558d9e73f1aba12bef05a7c3c1f.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://LudusXRApartment1_LudusXRatlas_n.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

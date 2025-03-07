@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bopfalfojcalq"
-path="res://.godot/imported/LudusXRApartment1.glb-74e3017cb5c40c238177a2bcc739efb0.scn"
+uid="uid://5oipnhkj08cx"
+path="res://.godot/imported/Character1.glb-9f5f7ba0382e6e86247fc142fe7d1969.scn"
 
 [deps]
 
-source_file="res://Models/LudusXRApartment1.glb"
-dest_files=["res://.godot/imported/LudusXRApartment1.glb-74e3017cb5c40c238177a2bcc739efb0.scn"]
+source_file="res://CharacterModels/Character1.glb"
+dest_files=["res://.godot/imported/Character1.glb-9f5f7ba0382e6e86247fc142fe7d1969.scn"]
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
