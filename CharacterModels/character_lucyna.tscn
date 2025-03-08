@@ -1,8 +1,8 @@
 [gd_scene load_steps=19 format=3 uid="uid://qckjqtx02str"]
 
 [ext_resource type="PackedScene" uid="uid://b1xi3eei6qnn1" path="res://CharacterModels/CharacterLucyna.glb" id="1_rekh2"]
-[ext_resource type="Script" path="res://character_lucyna.gd" id="2_u7dex"]
-[ext_resource type="Script" path="res://animation_tree.gd" id="3_i1nqv"]
+[ext_resource type="Script" path="res://CharacterModels/character_lucyna.gd" id="2_u7dex"]
+[ext_resource type="Script" path="res://CharacterModels/animation_tree.gd" id="3_i1nqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o61xs"]
 radius = 0.35
