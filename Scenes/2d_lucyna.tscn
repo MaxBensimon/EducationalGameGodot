@@ -1,16 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkumld2qh20mt"]
+[gd_scene load_steps=4 format=3 uid="uid://dkumld2qh20mt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y3vo"]
-size = Vector2(40, 40)
+[ext_resource type="Texture2D" uid="uid://7l4rnap1k0nr" path="res://Purple.png" id="1_5uedi"]
+[ext_resource type="Script" uid="uid://eajmjvopwuwj" path="res://Scripts/2d_lucyna.gd" id="1_c3erj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uedi"]
+size = Vector2(22, 72)
 
 [node name="2D_Lucyna" type="CharacterBody2D"]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-color = Color(0.648833, 0.322938, 1, 1)
+script = ExtResource("1_c3erj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8y3vo")
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_5uedi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0573394, 0.158462)
+texture = ExtResource("1_5uedi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -37)
+scale = Vector2(0.0355505, 0.0546154)
+texture = ExtResource("1_5uedi")

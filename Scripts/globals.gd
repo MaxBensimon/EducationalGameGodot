@@ -2,7 +2,6 @@ extends Node
 
 var is_interface_active: bool = false
 var player_pos: Vector3
-var test_int: int = 0
 
 var apartment = "res://Scenes/apartment.tscn"
 var interface = "res://Scenes/interface.tscn"

@@ -22,6 +22,7 @@ func _ready() -> void:
 	
 	global_position = Globals.player_pos
 
+
 # This function closes the game when the Escape-key is pressed
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("quit"):
@@ -72,7 +73,8 @@ func _physics_process(delta) -> void:
 		speed = 3
 	
 	
-	# This only works half the time it is pressed
+	# Hvorfor virker den her kun halvdelen af tiden?
+	# Hvorfor virker den her kode på den lille computer?
 	if Input.is_action_just_pressed("tab"):
 		Globals.player_pos = global_position
 	
