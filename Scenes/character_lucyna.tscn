@@ -1,0 +1,88 @@
+[gd_scene load_steps=18 format=3 uid="uid://qckjqtx02str"]
+
+[ext_resource type="PackedScene" uid="uid://b1xi3eei6qnn1" path="res://CharacterModels/CharacterLucyna.glb" id="1_hwhyv"]
+[ext_resource type="Script" uid="uid://c38wyk13vx73f" path="res://Scripts/character_lucyna.gd" id="2_s7cs1"]
+[ext_resource type="Script" uid="uid://ltsob8idywkb" path="res://Scripts/animation_tree.gd" id="3_imel5"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x4fv0"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xscj1"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j8yds"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_fqx7y"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_xscj1")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_j8yds")
+blend_point_1/pos = 1.0
+min_space = 0.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1pwye"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ha4pt"]
+animation = &"wave"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w7l53"]
+advance_mode = 2
+advance_expression = "state == IDLE"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qflxv"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "state == RUN"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bfltn"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "state == IDLE"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nohhi"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "state == WAVE"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kx28v"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "state == WAVE"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_egmjk"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "state == IDLE"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ul6ex"]
+xfade_time = 0.1
+advance_mode = 2
+advance_expression = "state == RUN"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_np850"]
+states/idle/node = SubResource("AnimationNodeAnimation_x4fv0")
+states/idle/position = Vector2(372, 170)
+states/idle_run_blend/node = SubResource("AnimationNodeBlendSpace1D_fqx7y")
+states/idle_run_blend/position = Vector2(1042, 225)
+states/run/node = SubResource("AnimationNodeAnimation_1pwye")
+states/run/position = Vector2(512, 170)
+states/wave/node = SubResource("AnimationNodeAnimation_ha4pt")
+states/wave/position = Vector2(452, 281)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_w7l53"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_qflxv"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_bfltn"), "run", "wave", SubResource("AnimationNodeStateMachineTransition_nohhi"), "idle", "wave", SubResource("AnimationNodeStateMachineTransition_kx28v"), "wave", "idle", SubResource("AnimationNodeStateMachineTransition_egmjk"), "wave", "run", SubResource("AnimationNodeStateMachineTransition_ul6ex")]
+graph_offset = Vector2(-37, 80)
+
+[node name="CharacterLucyna" instance=ExtResource("1_hwhyv")]
+script = ExtResource("2_s7cs1")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/scale = Vector3(1, 1, 1)
+bones/7/scale = Vector3(1, 1, 1)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_np850")
+anim_player = NodePath("../AnimationPlayer")
+parameters/idle_run_blend/blend_position = 0.0
+script = ExtResource("3_imel5")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqunc3ifbdrpa"]
+
+[ext_resource type="PackedScene" uid="uid://dkumld2qh20mt" path="res://Scenes/2d_lucyna.tscn" id="1_j00uw"]
+
+[node name="Interface" type="Node2D"]
+
+[node name="2D_Lucyna" parent="." instance=ExtResource("1_j00uw")]
+position = Vector2(644, 468)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1722.0
+offset_bottom = 882.0
+color = Color(1.54018e-06, 0.362797, 0.551335, 1)
