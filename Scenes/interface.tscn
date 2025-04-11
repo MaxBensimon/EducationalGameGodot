@@ -1,32 +1,173 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqunc3ifbdrpa"]
+[gd_scene load_steps=8 format=3 uid="uid://cqunc3ifbdrpa"]
 
-[ext_resource type="Texture2D" uid="uid://7l4rnap1k0nr" path="res://Purple.png" id="1_j00uw"]
+[ext_resource type="Texture2D" uid="uid://byx658nw752li" path="res://white.png" id="1_wpqjx"]
+[ext_resource type="Script" uid="uid://bsfda4pu4d32a" path="res://Scenes/interface.gd" id="1_x2tka"]
 [ext_resource type="PackedScene" uid="uid://dkumld2qh20mt" path="res://Scenes/2d_lucyna.tscn" id="2_75fju"]
+[ext_resource type="PackedScene" uid="uid://b7xgxg7qqhuok" path="res://Scenes/wall.tscn" id="3_wpqjx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_75fju"]
-size = Vector2(436, 325.001)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2tka"]
+size = Vector2(200, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dukh4"]
+size = Vector2(192, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg6la"]
+size = Vector2(192, 192)
 
 [node name="Interface" type="Node2D"]
+script = ExtResource("1_x2tka")
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.439216, 1, 1, 1)
+modulate = Color(0, 0.300716, 0.301912, 1)
 z_index = -1
-position = Vector2(576, 324.25)
-scale = Vector2(2.6422, 1.99231)
-texture = ExtResource("1_j00uw")
-
-[node name="Platform" type="Sprite2D" parent="."]
-modulate = Color(0.753426, 0.586373, 0, 1)
-z_index = -1
-position = Vector2(240, 612)
-scale = Vector2(1.06422, 0.0738461)
-texture = ExtResource("1_j00uw")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Platform"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/StaticBody2D"]
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_75fju")
+position = Vector2(576, 324)
+scale = Vector2(4.43077, 3.17647)
+texture = ExtResource("1_wpqjx")
 
 [node name="2D_Lucyna" parent="." instance=ExtResource("2_75fju")]
-position = Vector2(88, 560)
+position = Vector2(90, 500)
+
+[node name="Wallls" type="Node2D" parent="."]
+
+[node name="Wall1" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(128, 632)
+
+[node name="Wall2" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(384, 632)
+
+[node name="Wall3" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(640, 632)
+
+[node name="Wall4" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(896, 632)
+
+[node name="Wall5" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(1152, 632)
+
+[node name="Wall6" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(1136, 488)
+rotation = 1.5708
+
+[node name="Wall7" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(1136, 232)
+rotation = 1.5708
+
+[node name="Wall8" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(1136, -24)
+rotation = 1.5708
+
+[node name="Wall9" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(16, 488)
+rotation = 1.5708
+
+[node name="Wall10" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(16, 232)
+rotation = 1.5708
+
+[node name="Wall11" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(16, -24)
+rotation = 1.5708
+
+[node name="Wall12" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(184, 128)
+rotation = 1.5708
+
+[node name="Wall13" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(704, 128)
+rotation = 1.5708
+
+[node name="Wall14" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(960, 128)
+rotation = 1.5708
+
+[node name="Wall15" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(448, 128)
+rotation = 1.5708
+
+[node name="Wall16" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(48, 240)
+
+[node name="Wall17" parent="Wallls" instance=ExtResource("3_wpqjx")]
+position = Vector2(1104, 240)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Question" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 412.0
+offset_right = 719.0
+offset_bottom = 442.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Answer1" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 333.0
+offset_top = 260.0
+offset_right = 354.0
+offset_bottom = 290.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Answer2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 567.0
+offset_top = 260.0
+offset_right = 612.0
+offset_bottom = 290.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Answer3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 828.0
+offset_top = 260.0
+offset_right = 873.0
+offset_bottom = 290.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Control"]
+modulate = Color(1, 0, 0.670588, 1)
+layout_mode = 0
+offset_left = 84.0
+offset_top = 140.0
+offset_right = 136.0
+offset_bottom = 163.0
+
+[node name="ExitsAreas" type="Node2D" parent="."]
+
+[node name="ExitArea1" type="Area2D" parent="ExitsAreas"]
+position = Vector2(320, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitsAreas/ExitArea1"]
+shape = SubResource("RectangleShape2D_x2tka")
+
+[node name="ExitArea2" type="Area2D" parent="ExitsAreas"]
+position = Vector2(576, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitsAreas/ExitArea2"]
+shape = SubResource("RectangleShape2D_dukh4")
+
+[node name="ExitArea3" type="Area2D" parent="ExitsAreas"]
+position = Vector2(832, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitsAreas/ExitArea3"]
+shape = SubResource("RectangleShape2D_yg6la")
+
+[connection signal="body_entered" from="ExitsAreas/ExitArea1" to="." method="_on_exit_area_1_body_entered"]
+[connection signal="body_entered" from="ExitsAreas/ExitArea2" to="." method="_on_exit_area_2_body_entered"]
+[connection signal="body_entered" from="ExitsAreas/ExitArea3" to="." method="_on_exit_area_3_body_entered"]

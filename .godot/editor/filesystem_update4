@@ -2,7 +2,7 @@ res://Scenes/apartment.tscn
 res://Scenes/character_lucyna.tscn
 res://Scenes/interface.tscn
 res://Scenes/2d_lucyna.tscn
-res://Scripts/globals.gd
-res://Scripts/character_lucyna.gd
-res://Scenes/2d_lucyna.gd
 res://Scripts/2d_lucyna.gd
+res://Scenes/wall.tscn
+res://Scenes/interface.gd
+res://Scripts/globals.gd

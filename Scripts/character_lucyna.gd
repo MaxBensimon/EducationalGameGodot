@@ -72,11 +72,9 @@ func _physics_process(delta) -> void:
 		isWaving = false
 		speed = 3
 	
-	
-	# Hvorfor virker den her kun halvdelen af tiden?
-	# Hvorfor virker den her kode på den lille computer?
 	if Input.is_action_just_pressed("tab"):
-		Globals.player_pos = global_position
+		if not Globals.is_interface_active:
+			Globals.player_pos = global_position
 	
 	move_and_slide()
 	

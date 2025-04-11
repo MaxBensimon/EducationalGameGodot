@@ -6,11 +6,14 @@ var player_pos: Vector3
 var apartment = "res://Scenes/apartment.tscn"
 var interface = "res://Scenes/interface.tscn"
 
+var score: int
+
 func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("tab"):
+		await get_tree().create_timer(.01).timeout
 		is_interface_active = !is_interface_active
 		if is_interface_active:
 			get_tree().change_scene_to_file(interface)
